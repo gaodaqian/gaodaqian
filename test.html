@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+  <style>
+  .odd {
+    background-color: green;
+  }
+  
+  .even {
+    background-color: red;
+  }
+  </style>
+</head>
+
+<body ng-app="myApp" ng-controller="FirstController">
+  <div>
+    <ul>
+      <li ng-repeat="item in datas | filter: {name: 'jack1'} track by $index" ng-bind='item.age' ng-class="$odd ? 'odd' : 'even' "></li>
+    </ul>
+  </div>
+  <div ng-switch='name'>
+    <div ng-switch-when="jack">jack</div>
+    <div ng-switch-when="rose">rose</div>
+    <div ng-switch-when="haha">haha</div>
+  </div>
+  <div>{{ur}}</div>
+  <p>{{12345678.333 | currency: "￥"}}</p>
+  <p>{{1412345678901 | date: "yyyy-MM-dd hh:mm:ss"}}</p>
+	<p>{{'是谁在唱歌，温暖了寂寞' | limitTo:5:2}}</p>
+
+
+
+  <script src="node_modules/angular/angular.js"></script>
+  <script>
+  /**
+   * myApp Module
+   *
+   * Description
+   */
+  angular.module('myApp', []).controller('FirstController', ['$scope', '$location', function($scope, $location) {
+    $scope.datas = [{
+      name: 'jack1',
+      age: 21
+    }, {
+      name: 'jack2',
+      age: 22
+    }, {
+      name: 'jack3',
+      age: 23
+    }];
+
+    $scope.name = 'rose';
+
+    $scope.ur = $location.url();
+  }]);
+  </script>
+</body>
+
+</html>
