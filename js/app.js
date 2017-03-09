@@ -36,16 +36,22 @@
         id = vm.taskList[len - 1].id + 1;
       }
 
-      vm.taskList.push({id: id, name: vm.newTask, isCompleted: false});
+      vm.taskList.push({ id: id, name: vm.newTask, isCompleted: false });
       vm.newTask = '';
-      
-      
-
-
-
     };
 
-  };
+    // 3. 删除任务
+    vm.remove = function(id) {
+      console.log(1);
+      for (var i = 0; i < vm.taskList.length; i++) {
+        if (vm.taskList[i].id === id) {
+          vm.taskList.splice(i, 1);
+        }
+      }
+    }; 
 
 
+
+
+  }
 })(window);
