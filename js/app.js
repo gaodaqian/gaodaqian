@@ -42,7 +42,6 @@
 
     // 3. 删除任务
     vm.remove = function(id) {
-      console.log(1);
       for (var i = 0; i < vm.taskList.length; i++) {
         if (vm.taskList[i].id === id) {
           vm.taskList.splice(i, 1);
@@ -50,7 +49,23 @@
       }
     }; 
 
+    // 4. 修改任务
+    vm.editId = 0;
+    vm.edit = function (id) {
+      vm.editId = id;
+    };
 
+    vm.update = function () {
+      vm.editId = 0;
+    };
+
+    // 全选、反选
+    vm.allChecked = false;
+    vm.checkAll = function () {
+      vm.taskList.forEach( function(task) {
+        task.isCompleted = vm.allChecked;
+      });
+    }
 
 
   }
