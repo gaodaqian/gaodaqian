@@ -1,6 +1,6 @@
 # TodoMVC App Template
 
-> Template used for creating [TodoMVC](http://todomvc.com) appss
+> Template used for creating [TodoMVC](http://todomvc.com) appsss
 
 ![](https://github.com/tastejs/todomvc-app-css/raw/master/screenshot.png)
 
